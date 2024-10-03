@@ -16,18 +16,20 @@ for (let i=0; i<chairsArr.length; i++){
 
 
 
-chairScoreArr.sort((a, b) => b.score - a.score);
+chairScoreArr.sort((a, b) => a.score - b.score);
 console.log(chairScoreArr);
 
 for (let i=0; i<chairScoreArr.length; i++){
     let chairEle = document.createElement('div');
     chairEle.setAttribute('class', 'chairs');
     let chairNumber = chairScoreArr[i].chairNum;
-    let chairScore = chairScoreArr[i].score;
+    // need fixing
+    let chairScore = 56 - chairScoreArr[i].score;
     let chairEleInnerHTML = `
         <img src="./images/chair${chairNumber}.png" alt="chair${chairNumber} picture">
         <div>
             <h2>Chair ${chairNumber}</h2>
+            <p>Rank ${i+1}</p>
             <p>Score: ${chairScore}</p>
         </div>
     `;
